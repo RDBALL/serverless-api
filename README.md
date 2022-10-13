@@ -4,7 +4,7 @@
 
 ## Author: Robert Ball
 
-Lab Collaboration - in-class demo built upon for handleCreate and handleRead
+Lab Collaboration - coded along with in-class demo for handleCreate and handleRead for initial proof of life
 
 **Live /people DynamoDB | [DynamoDB Link](https://lske4q71q5.execute-api.us-west-2.amazonaws.com/lab18/people)**
 
