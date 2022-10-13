@@ -1,17 +1,17 @@
 'use strict';
 
 require('dynamoose');
-const GetPeople = require('./schema.js');
+const HandleRead = require('./schema.js');
 
 exports.handler = async (event) => {
   try {
     const id = event.queryStringParameters && event.queryStringParameters.id;
     let data;
     if (id) {
-      const list = await GetPeople.query('id').eq(id).exec();
+      const list = await HandleRead.query('id').eq(id).exec();
       data = list[0];
     } else {
-      data = await GetPeople.scan().exec();
+      data = await HandleRead.scan().exec();
       console.log('Database list ----->:', data);
     }
     return {

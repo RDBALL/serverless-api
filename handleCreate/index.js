@@ -1,7 +1,7 @@
 'use strict';
 
 require('dynamoose');
-const CreatePerson = require('./schema.js');
+const HandleCreate = require('./schema.js');
 const Chance = require('chance');
 const chance = new Chance;
 
@@ -10,7 +10,7 @@ exports.handler = async (event) => {
     const {name, age } = JSON.parse(event.body);
     const id = chance.guid();
 
-    const record = new CreatePerson({ id, name, age });
+    const record = new HandleCreate({ id, name, age });
     const data = await record.save();
     console.log('New person added to database --->',data);
     return {
